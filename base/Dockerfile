@@ -1,13 +1,7 @@
-FROM debian:10
+FROM debian:bullseye
 
 RUN apt-get -y update \
  && apt-get -y --no-install-recommends install git make \
- && apt-get clean
-
-RUN apt-get -y update \
- && apt-get -y --no-install-recommends install python3-sphinx python3-sphinx-rtd-theme \
- && apt-get clean
-
-RUN apt-get -y update \
- && apt-get -y --no-install-recommends install python3-sphinxcontrib.plantuml \
- && apt-get clean
+ && apt-get autoremove -y \
+ && apt-get clean \
+ && find /var/lib/apt/lists -mindepth 1 -delete

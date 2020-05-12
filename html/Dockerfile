@@ -1,3 +1,3 @@
-FROM stigsm/sphinx-plantuml:base
+FROM stigsm/sphinx-plantuml-sphinx:latest
 
 USER 1000
